@@ -1,0 +1,21 @@
+package hinhtron;
+
+abstract public class Share {
+    protected int x, y;
+
+    protected Share(int _x, int _y) {
+        x = _x;
+        y = _y;
+    }
+
+    abstract public void draw();
+
+    abstract public void erase();
+
+    public void moveTo(int _x, int _y) {
+        erase();
+        x = _x;
+        y = _y;
+        draw();
+    }
+}
