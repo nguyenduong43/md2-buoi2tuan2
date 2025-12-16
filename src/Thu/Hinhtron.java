@@ -1,16 +1,21 @@
 package Thu;
 
-public class Hinhtron extends GeometricObject {
-    int x;
-    int y;
+public class Hinhtron extends GeometricObject implements Resizeable {
+
     double radius;
-    public Hinhtron(int x, int y, double radius) {
-        this.x = x;
-        this.y = y;
+    public Hinhtron( double radius) {
+
         this.radius = radius;
     }
-    public Hinhtron(){}
+    public Hinhtron(String color,boolean filled, double radius) {
+        super(color,filled);
+        this.radius = radius;
+    }
+    public double getRadius() {
+        return radius;
+    }
 
+    public void setRadius(double radius) {}
     @Override
     public double getArea() {
         return 3.14*this.radius * this.radius;
@@ -18,5 +23,16 @@ public class Hinhtron extends GeometricObject {
     @Override
     public double getPerimeter() {
         return 2*3.14*this.radius;
+    }
+    public String toString() {
+        return "radius=" + getRadius()
+                + ", area=" + getArea()
+                + ", color=" + getColor()
+                + ", filled=" + isFilled();
+    }
+
+    @Override
+    public Double tang() {
+        return radius*radius*3.14*Math.floor(Math.random()*100+1)/100;
     }
 }

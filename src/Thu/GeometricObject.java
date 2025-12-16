@@ -58,5 +58,6 @@ public abstract class GeometricObject {
             {
                 System.out.println(getArea()+" "+getPerimeter());
             }
+           
  }
 
